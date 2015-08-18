@@ -46,9 +46,81 @@
   @extend .z-depth-1;
   @include transition(.2s ease-out);
   cursor: pointer;
+  margin-bottom: 20px;
 
   &:hover {
     background-color: lighten($button-color, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+.btn-link-menu {
+  text-decoration:none;
+  color: $button-color-raised;
+  background-color: #00b8d4;
+  text-align: center;
+  letter-spacing: .5px;
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+  padding: 5px;
+
+  &:hover {
+    background-color: lighten(#00b8d4, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+// red Button
+.btn-red {
+  text-decoration:none;
+  color: #ffffff;
+  background-color: #ef5350;
+  text-align: center;
+  letter-spacing: .5px;
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    background-color: lighten(#ef5350, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+// blue Button
+.btn-blu {
+  text-decoration:none;
+  color: #ffffff;
+  background-color: #81d4fa;
+  text-align: center;
+  letter-spacing: .5px;
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    background-color: lighten(#81d4fa, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+// green Button
+.btn-grn {
+  text-decoration:none;
+  color: #ffffff;
+  background-color: #b3e5fc;
+  text-align: center;
+  letter-spacing: .5px;
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    background-color: lighten(#b3e5fc, 5%);
     @extend .z-depth-1-half;
   }
 }

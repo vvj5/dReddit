@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DReddit</title>
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+  <title>Dreddit!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,26 +17,34 @@
 
 </head>
 <body>
+    <div class="container green lighten-4">
+    <span class="dreddit-text">Dreddit!</span>
+      <% if user_signed_in? %>
+          <span class="waves-effect waves-light btn"><%= link_to 'Home', links_path %></span>
+          <span class="waves-effect waves-light btn">
+           <%= link_to 'Account', edit_user_registration_path %>
+           </span>
+           <span class="waves-effect waves-light btn">
+           <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+           </span>
+           <span class="waves-effect waves-light btn">
+           <%= link_to 'Submit Link', new_link_path %>
+           </span>
+      <% else %>
+        <ul>
+          <li> <%= link_to 'Sign In', new_user_session_path %> </li>
+          <li> <%= link_to 'Sign Up', new_user_registration_path %> </li>
+        </ul>
 
-<% if user_signed_in? %>
-  <ul>
-    <li> <%= link_to 'Submit Link', new_link_path %> </li>
-    <li> <%= link_to 'Account', edit_user_registration_path %></li>
-    <li> <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %> </li>
-  </ul>
-<% else %>
-  <ul>
-    <li> <%= link_to 'Sign In', new_user_session_path %> </li>
-    <li> <%= link_to 'Sign Up', new_user_registration_path %> </li>
-  </ul>
+      <% end %>
+    </div>
 
-<% end %>
+    <div class="container">
+     <%= yield %>
 
-<%= yield %>
-
-<!--Import jQuery before materialize.js-->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script type="text/javascript" src="js/materialize.min.js"></script>
-
-</body>
+      <!--Import jQuery before materialize.js-->
+       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+       <script type="text/javascript" src="js/materialize.min.js"></script>
+    </div>
+  </body>
 </html>

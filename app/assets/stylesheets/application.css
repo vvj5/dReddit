@@ -15,3 +15,9 @@
  *= require_tree .
  *= require_self
  */
+
+.title-text {
+  font-size: 24px;
+  color: teal;
+  font-family: Courier;
+}

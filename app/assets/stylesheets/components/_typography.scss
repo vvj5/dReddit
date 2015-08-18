@@ -1,3 +1,13 @@
+.dreddit-text {
+  font-family: 'Lobster', cursive;
+  color: #00b8d4;
+  font-size: 48px;
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: bottom;
+}
+
+
 a {
   text-decoration: none;
 }
@@ -17,7 +27,8 @@ html{
     font-size: 15px;
   }
 
-  font-family: "Roboto", sans-serif;
+
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   color: $off-black;
 }

@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Title:</strong>
+  <strong>TITLE:</strong>
   <%= @link.title %>
 </p>
 
 <p>
-  <strong>Url:</strong>
+  <strong>URL:</strong>
   <%= @link.url %>
 </p>
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<span class="btn-link-menu">
+<%= link_to 'Edit', edit_link_path(@link) %></span> |
+<span class="btn-link-menu">
+<%= link_to 'Back', links_path %></span>
