@@ -19,27 +19,20 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
-<body>
+  <body>
     <div class="container green lighten-4">
-    <span class="dreddit-text">Dreddit!</span>
+      <span class="dreddit-text">Dreddit!</span>
+      <div class="nav-buttons">
       <% if user_signed_in? %>
           <span class="waves-effect waves-light btn"><%= link_to 'Home', links_path %></span>
-          <span class="waves-effect waves-light btn">
-           <%= link_to 'Account', edit_user_registration_path %>
-           </span>
-           <span class="waves-effect waves-light btn">
-           <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-           </span>
-           <span class="waves-effect waves-light btn">
-           <%= link_to 'Submit Link', new_link_path %>
-           </span>
+          <span class="waves-effect waves-light btn"><%= link_to 'Account', edit_user_registration_path %></span>
+           <span class="waves-effect waves-light btn"><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></span>
+           <span class="waves-effect waves-light btn"><%= link_to 'Submit Link', new_link_path %></span>
       <% else %>
-        <ul>
-          <li> <%= link_to 'Sign In', new_user_session_path %> </li>
-          <li> <%= link_to 'Sign Up', new_user_registration_path %> </li>
-        </ul>
-
+          <span class="waves-effect waves-light btn"><%= link_to 'Sign In', new_user_session_path %></span>
+          <span class="waves-effect waves-light btn"><%= link_to 'Sign Up', new_user_registration_path %></span>
       <% end %>
+      </div>
     </div>
 
     <div class="container">

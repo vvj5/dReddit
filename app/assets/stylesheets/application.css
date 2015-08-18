@@ -20,4 +20,10 @@
   font-size: 24px;
   color: teal;
   font-family: Courier;
+  float: left;
+}
+
+.nav-buttons {
+  float: right;
+  margin-top: 15px;
 }

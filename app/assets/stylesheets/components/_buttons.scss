@@ -46,7 +46,8 @@
   @extend .z-depth-1;
   @include transition(.2s ease-out);
   cursor: pointer;
-  margin-bottom: 20px;
+  font-size: 12px;
+  // margin-bottom: 20px;
 
   &:hover {
     background-color: lighten($button-color, 5%);
@@ -56,6 +57,7 @@
 
 .btn-link-menu {
   text-decoration:none;
+  font-size: 10px;
   color: $button-color-raised;
   background-color: #999999;
   text-align: center;
@@ -90,21 +92,16 @@
 
 .btn-icons {
   text-decoration:none;
-  color: white;
-  background-color: #00b8d4;
-  // text-align: center;
+  color: #00b8d4;
+  // background-color: #00b8d4;
   padding: 10px;
   letter-spacing: .5px;
   font-size: 10px;
   cursor: pointer;
-  width: 100px;
-  height: 30px;
   clear: left;
-  @extend .z-depth-1;
-  @include transition(.2s ease-out);
 
   &:hover {
-    background-color: lighten(#00b8d4, 5%);
+    background-color: #ffffff;
     @extend .z-depth-1-half;
   }
 }
