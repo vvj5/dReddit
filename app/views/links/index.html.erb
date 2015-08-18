@@ -20,6 +20,29 @@ ALL TEH LINKS
         <td><%= link.title %></td>
         <td><%= link.url %></td>
 
+        <td>
+          <div class="btn-icons">
+            <i class="tiny material-icons">pageview</i>
+              VIEW
+              <a href="<%= link.url %>"></a>
+          </div>
+        </td>
+
+        <td>
+          <div class="btn-icons">
+            <% link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" %>
+              +1:
+              <%= link.get_upvotes.size %>
+          </div>
+        </td>
+
+        <td>
+          <div class="btn-icons">
+            <% link_to dislike_link_path(link), method: :put %>
+            -1:
+          </div>
+        </td>
+
         <td><span class="btn-link-menu"><%= link_to 'Show', link %></span></td>
 
           <td><span class="btn-link-menu"><%= link_to 'Edit', edit_link_path(link) %></span></td>
