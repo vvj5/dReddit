@@ -6,7 +6,7 @@ $primary-color-dark: darken($primary-color, 15%) !default;
 $secondary-color: color("orange", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
-$link-color: #ffffff !default;
+$link-color: #666666 !default;
 
 /*** Badges ***/
 $badge-bg-color: $secondary-color !default;

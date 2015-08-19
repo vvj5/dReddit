@@ -1,12 +1,14 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :authorized_user, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   def upvote
     @link = Link.find(params[:id])
     @link.upvote_by current_user
     redirect_to :back
   end
+
 
   def downvote
     @link = Link.find(params[:id])
@@ -37,7 +39,17 @@ class LinksController < ApplicationController
 
   # GET /links/1/edit
   def edit
-  end
+      respond_to do |format|
+        if @link.update(link_params)
+          format.html { redirect_to @link, notice: 'Link was successfully updated.' }
+          format.json { render :show, status: :ok, location: @link }
+        else
+          format.html { render :edit }
+          format.json { render json: @link.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
 
   # POST /links
   # POST /links.json

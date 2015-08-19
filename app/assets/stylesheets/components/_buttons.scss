@@ -39,18 +39,19 @@
 // Raised Button
 .btn {
   text-decoration:none;
-  color: $button-color-raised;
-  background-color: $button-color;
+  color: #ffffff;
+  background-color: #00B8D4;
   text-align: center;
   letter-spacing: .5px;
   @extend .z-depth-1;
   @include transition(.2s ease-out);
   cursor: pointer;
-  font-size: 12px;
-  // margin-bottom: 20px;
+  font-size: 18px;
+  width: 100%;
+  font-weight: bold;
 
   &:hover {
-    background-color: lighten($button-color, 5%);
+    background-color: lighten(#00B8D4, 5%);
     @extend .z-depth-1-half;
   }
 }
@@ -59,33 +60,36 @@
   text-decoration:none;
   font-size: 10px;
   color: $button-color-raised;
-  background-color: #999999;
+  background-color: #eeeeee;
   text-align: center;
   letter-spacing: .5px;
   @extend .z-depth-1;
   @include transition(.2s ease-out);
   cursor: pointer;
   padding: 5px;
+  font-weight: bold;
+  margin-left: 10px;
 
   &:hover {
-    background-color: lighten(#999999, 5%);
+    background-color: lighten(#eeeeee, 5%);
     @extend .z-depth-1-half;
   }
 }
 
 .btn-actions {
   text-decoration:none;
-  color: black;
-  background-color: #00b8d4;
+  background-color: #00B8D4;
   text-align: center;
   letter-spacing: .5px;
   @extend .z-depth-1;
   @include transition(.2s ease-out);
   cursor: pointer;
-  // padding: 5px;
+  font-size: 10px;
+  padding: 5px;
+  font-weight: bold;
 
   &:hover {
-    background-color: lighten(#00b8d4, 5%);
+    background-color: lighten(#00B8D4, 5%);
     @extend .z-depth-1-half;
   }
 }
@@ -100,10 +104,10 @@
   cursor: pointer;
   clear: left;
 
-  &:hover {
-    background-color: #ffffff;
-    @extend .z-depth-1-half;
-  }
+  // &:hover {
+  //   background-color: #ffffff;
+  //   @extend .z-depth-1-half;
+  // }
 }
 
 // red Button

@@ -27,3 +27,13 @@
   float: right;
   margin-top: 15px;
 }
+
+.teh-links {
+  font-size: 24px;
+  font-weight: bold;
+  color: #C6E4C9;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}

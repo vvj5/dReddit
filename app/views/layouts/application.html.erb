@@ -10,8 +10,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+
+
+
+
 
 <!--Import materialize.css-->
      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -20,27 +22,45 @@
 
 </head>
   <body>
+
     <div class="container green lighten-4">
       <span class="dreddit-text">Dreddit!</span>
-      <div class="nav-buttons">
-      <% if user_signed_in? %>
-          <span class="waves-effect waves-light btn"><%= link_to 'Home', links_path %></span>
-          <span class="waves-effect waves-light btn"><%= link_to 'Account', edit_user_registration_path %></span>
-           <span class="waves-effect waves-light btn"><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></span>
-           <span class="waves-effect waves-light btn"><%= link_to 'Submit Link', new_link_path %></span>
-      <% else %>
-          <span class="waves-effect waves-light btn"><%= link_to 'Sign In', new_user_session_path %></span>
-          <span class="waves-effect waves-light btn"><%= link_to 'Sign Up', new_user_registration_path %></span>
-      <% end %>
-      </div>
+        <div class="nav-buttons">
+
+          <% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong>
+            <br>
+            <span class="btn-link-menu">
+              <%= link_to 'HOME', root_path %></span>
+            <span class="btn-link-menu">
+              <%= link_to 'EDIT PROFILE', edit_user_registration_path, :class => 'navbar-link' %></span>
+            <span class="btn-link-menu">
+              <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></span>
+          <% else %>
+            <span class="btn-link-menu">
+              <%= link_to "SIGN UP", new_user_registration_path, :class => 'navbar-link'  %></span>
+            <span class="btn-link-menu">
+              <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></span>
+          <% end %>
+        </div>
     </div>
 
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <div class="container">
-     <%= yield %>
+
+      <%= yield %>
+
+    </div>
 
       <!--Import jQuery before materialize.js-->
        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
        <script type="text/javascript" src="js/materialize.min.js"></script>
-    </div>
+
   </body>
 </html>

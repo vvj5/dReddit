@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<h5>
-ALL TEH LINKS
-</h5>
+<span class="teh-links">
+SO LINK. SUCH TREND. MUCH READ.</span>
+
+
+  <% if user_signed_in? %>
+      <span class="waves-effect waves-light btn"><%= link_to 'SUBMIT A LINK!', new_link_path %></span>
+  <% else %>
+  <% end %>
+
 
 <table class="bordered striped">
   <thead>
@@ -19,39 +24,37 @@ ALL TEH LINKS
       <tr>
         <td><%= link.title %></td>
         <td><%= link.url %></td>
-
         <td>
           <div class="btn-icons">
-            <i class="small material-icons">pageview</i>
-
-              <a href="<%= link.url %>"></a>
+            <a href="<%= link.url %>"><i class="small material-icons">pageview</i></a>
+          </div>
+        </td>
+        <td>
+          <div class="btn-icons">
+            <a href="<% link_to like_link_path(link), method: :put %>"><i class="small material-icons">thumb_up</i>
+            <%= link.get_upvotes.size %></a>
           </div>
         </td>
 
         <td>
           <div class="btn-icons">
-            <i class="small material-icons">thumb_up</i>
-            <% link_to like_link_path(link), method: :put %>
-              <%= link.get_upvotes.size %>
+            <a href="<% link_to dislike_link_path(link), method: :put %>"><i class="small material-icons">thumb_down</i><%= link.get_downvotes.size %></a>
           </div>
         </td>
 
-        <td>
-          <div class="btn-icons">
-            <i class="small material-icons">thumb_down</i>
-              <% link_to dislike_link_path(link), method: :put %>
-          </div>
-        </td>
-
-        <td><span class="btn-link-menu"><%= link_to 'Show', link %></span></td>
-
-          <td><span class="btn-link-menu"><%= link_to 'Edit', edit_link_path(link) %></span></td>
-
-          <td><span class="btn-link-menu"><%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
 
 
+            <td><span class="btn-actions"><%= link_to 'Show', link %></span></td>
+
+          <% if link.User == current_user %>
+
+            <td>span class="btn-actions"><%= link_to 'Edit', edit_link_path(@link) %></span></td>
+
+            <td><span class="btn-actions"><%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
+          <% end %>
+        <% end %>
       </tr>
-    <% end %>
+
 
   </tbody>
 </table>
