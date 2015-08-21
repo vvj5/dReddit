@@ -48,12 +48,14 @@ SO LINK. SUCH TREND. MUCH READ.</span>
 
           <% if link.User == current_user %>
 
-            <td>span class="btn-actions"><%= link_to 'Edit', edit_link_path(@link) %></span></td>
+            <td><span class="btn-actions"><%= link_to 'Edit', edit_link_path(link) %></span></td>
 
-            <td><span class="btn-actions"><%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
-          <% end %>
+            <td><span class="btn-actions"><%= link_to 'Destroy', link.destroy, data: { confirm: 'Are you sure?' } %></span></td>
+
+          <% else %>
         <% end %>
-      </tr>
+      <% end %>
+    </tr>
 
 
   </tbody>
